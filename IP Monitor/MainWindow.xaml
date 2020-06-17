@@ -24,13 +24,13 @@
                 <ImageBrush ImageSource="/Start.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="tempo1" Content="Tempo:" HorizontalAlignment="Left" Height="34" Margin="29,234,0,0" VerticalAlignment="Top" Width="180" Foreground="White" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="tempo1" Content="Tempo:" HorizontalAlignment="Left" Height="34" Margin="29,227,0,0" VerticalAlignment="Top" Width="137" Foreground="White" FontSize="16" Grid.Column="1"/>
         <Rectangle HorizontalAlignment="Left" Height="148" Margin="4,64,0,0" VerticalAlignment="Top" Width="332" Grid.Column="1">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Medidor.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Bytes:" HorizontalAlignment="Left" Height="34" Margin="29,262,0,0" VerticalAlignment="Top" Width="71" Foreground="White" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="bytes1" Content="Bytes:" HorizontalAlignment="Left" Height="34" Margin="30,252,0,0" VerticalAlignment="Top" Width="136" Foreground="White" FontSize="16" Grid.Column="1"/>
         <Rectangle Grid.Column="2" HorizontalAlignment="Left" Height="242" Margin="5,26,0,0" VerticalAlignment="Top" Width="2">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Linha 1.png"/>
@@ -55,13 +55,13 @@
                 <ImageBrush ImageSource="/Caminho 2.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="tempo2" Content="Tempo:" HorizontalAlignment="Left" Height="34" Margin="8,221,0,0" VerticalAlignment="Top" Width="153" Foreground="White" FontSize="16" Grid.Column="3"/>
+        <Label x:Name="tempo2" Content="Tempo:" HorizontalAlignment="Left" Height="34" Margin="8,221,0,0" VerticalAlignment="Top" Width="142" Foreground="White" FontSize="16" Grid.Column="3"/>
         <Rectangle HorizontalAlignment="Left" Height="148" Margin="32,64,0,0" VerticalAlignment="Top" Width="332" Grid.Column="2" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Medidor.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Bytes:" HorizontalAlignment="Left" Height="34" Margin="8,249,0,0" VerticalAlignment="Top" Width="71" Foreground="White" FontSize="16" Grid.Column="3"/>
+        <Label x:Name="bytes2" Content="Bytes:" HorizontalAlignment="Left" Height="34" Margin="8,249,0,0" VerticalAlignment="Top" Width="121" Foreground="White" FontSize="16" Grid.Column="3"/>
         <Label x:Name="nome2" Content="Servidor : " HorizontalAlignment="Left" Height="34" Margin="28,12,0,0" VerticalAlignment="Top" Width="332" Foreground="White" FontSize="16" Grid.Column="2" Grid.ColumnSpan="2"/>
         <Rectangle x:Name="Indicador2" Grid.Column="3" HorizontalAlignment="Left" Height="9" Margin="53,201,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="1,0.5">
             <Rectangle.RenderTransform>
@@ -109,8 +109,14 @@
                 <ImageBrush ImageSource="/Linha 1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="tempo3" Content="Tempo:" HorizontalAlignment="Left" Height="34" Margin="404,221,0,0" VerticalAlignment="Top" Width="193" Foreground="White" FontSize="16" Grid.Column="3"/>
-        <Label Content="Bytes:" HorizontalAlignment="Left" Height="34" Margin="404,249,0,0" VerticalAlignment="Top" Width="71" Foreground="White" FontSize="16" Grid.Column="3"/>
+        <Label x:Name="tempo3" Content="Tempo:" HorizontalAlignment="Left" Height="34" Margin="404,221,0,0" VerticalAlignment="Top" Width="144" Foreground="White" FontSize="16" Grid.Column="3"/>
+        <Label x:Name="bytes3" Content="Bytes:" HorizontalAlignment="Left" Height="34" Margin="404,249,0,0" VerticalAlignment="Top" Width="71" Foreground="White" FontSize="16" Grid.Column="3"/>
         <Label x:Name="nome3" Content="Servidor : " HorizontalAlignment="Left" Height="34" Margin="385,10,0,0" VerticalAlignment="Top" Width="332" Foreground="White" FontSize="16" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Label x:Name="semResposta1" Content="Sem resposta: " HorizontalAlignment="Left" Height="34" Margin="170,227,0,0" VerticalAlignment="Top" Width="169" Foreground="White" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="semResposta2" Content="Sem resposta: " HorizontalAlignment="Left" Height="34" Margin="161,221,0,0" VerticalAlignment="Top" Width="183" Foreground="White" FontSize="16" Grid.Column="3"/>
+        <Label x:Name="semResposta3" Content="Sem resposta: " HorizontalAlignment="Left" Height="34" Margin="553,221,0,0" VerticalAlignment="Top" Width="177" Foreground="White" FontSize="16" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Label x:Name="pacotes1" Content="Enviados:" HorizontalAlignment="Left" Height="34" Margin="171,252,0,0" VerticalAlignment="Top" Width="169" Foreground="White" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="pacotes2" Content="Enviados:" HorizontalAlignment="Left" Height="34" Margin="161,252,0,0" VerticalAlignment="Top" Width="169" Foreground="White" FontSize="16" Grid.Column="3"/>
+        <Label x:Name="pacotes3" Content="Enviados:" HorizontalAlignment="Left" Height="34" Margin="553,252,0,0" VerticalAlignment="Top" Width="169" Foreground="White" FontSize="16" Grid.Column="3" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

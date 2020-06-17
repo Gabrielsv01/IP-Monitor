@@ -1,0 +1,25 @@
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\bin\Debug\netcoreapp3.1\IP Monitor.exe
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\bin\Debug\netcoreapp3.1\IP Monitor.deps.json
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\bin\Debug\netcoreapp3.1\IP Monitor.runtimeconfig.json
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\bin\Debug\netcoreapp3.1\IP Monitor.runtimeconfig.dev.json
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\bin\Debug\netcoreapp3.1\IP Monitor.dll
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\bin\Debug\netcoreapp3.1\IP Monitor.pdb
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.csprojAssemblyReference.cache
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor_MarkupCompile.cache
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor_MarkupCompile.lref
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.g.resources
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.AssemblyInfoInputs.cache
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.AssemblyInfo.cs
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.dll
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.pdb
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.genruntimeconfig.cache
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.exe
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.deps.json
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.runtimeconfig.json
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.runtimeconfig.dev.json
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.dll
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.pdb

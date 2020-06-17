@@ -5,6 +5,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>IP_Monitor</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Authors>Gabriel Silva Vieira</Authors>
+    <RepositoryUrl>https://github.com/Gabrielsv01/IP-Monitor</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>Build\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

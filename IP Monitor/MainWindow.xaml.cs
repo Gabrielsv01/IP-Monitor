@@ -21,9 +21,6 @@ namespace IP_Monitor
 
         static bool EnProcesso = false;
 
-        public int atraso1;
-        public int atraso2;
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!EnProcesso)
@@ -31,13 +28,17 @@ namespace IP_Monitor
                 EnProcesso = true;
                 //Thread ping1 = new Thread(new ThreadStart(Ping1));
                 //ping1.Start();
-                Servidor servi = new Servidor("168.195.212.50", Indicador1, tempo1,nome1, this.Dispatcher);
-                Thread ping1 = new Thread(new ThreadStart(servi.PingTeste));
+                Servidor servidor1 = new Servidor("168.195.212.50", Indicador1, tempo1, nome1, this.Dispatcher);
+                Thread ping1 = new Thread(new ThreadStart(servidor1.PingTeste));
                 ping1.Start();
 
-                Servidor servidor2 = new Servidor("190.15.120.138", Indicador2, tempo2,nome2, this.Dispatcher);
+                Servidor servidor2 = new Servidor("190.15.120.138", Indicador2, tempo2, nome2, this.Dispatcher);
                 Thread ping2 = new Thread(new ThreadStart(servidor2.PingTeste));
                 ping2.Start();
+
+                Servidor servidor3 = new Servidor("10.0.4.12", Indicador3, tempo3, nome3, this.Dispatcher);
+                Thread ping3 = new Thread(new ThreadStart(servidor3.PingTeste));
+                ping3.Start();
             }
         }
 
@@ -71,15 +72,21 @@ namespace IP_Monitor
                 {
 
                     PingReply resposta;
-                    Console.WriteLine("ok");
+
                     try
                     {
-                        resposta = obj.Send(link, 500);
+                        resposta = obj.Send(link, 120);
+
                         this.atraso = (int)resposta.RoundtripTime;
-                        this.listaTempo.Add(atraso);
+                        this.listaTempo.Add(this.atraso);
                     }
-                    catch { }
-                    MostrarInfor(this.atraso,this.link);
+                    catch
+                    {
+
+
+                    }
+
+                    MostrarInfor(this.atraso, this.link);
                     Thread.Sleep(500);
 
                 }
@@ -89,7 +96,7 @@ namespace IP_Monitor
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    tempo.Content = atraso + " ms ";
+                    tempo.Content = "Tempo: " + atraso + " ms ";
                     nome.Content = "Servidor: " + link;
 
                     // Criando a rotação
@@ -97,7 +104,7 @@ namespace IP_Monitor
                     // Criando o grupo de rotação
                     TransformGroup myTransformGroup = new TransformGroup();
 
-                    if ((listaTempo.Count == 5) && ((listaTempo.Sum()/ listaTempo.Count) > 180))
+                    if ((listaTempo.Count == 5) && (((listaTempo.Sum() / listaTempo.Count) > 180) || (listaTempo.Sum() == 0)))
                     {
                         // Definindo a rotação
                         myRotateTransform.Angle = 175;
@@ -118,7 +125,7 @@ namespace IP_Monitor
                     {
 
                         // Definindo a rotação
-                        myRotateTransform.Angle = listaTempo.Sum() / (listaTempo.Count -1);
+                        myRotateTransform.Angle = listaTempo.Sum() / (listaTempo.Count - 1);
 
                         // adicionado o grupo de rotação
                         myTransformGroup.Children.Add(myRotateTransform);

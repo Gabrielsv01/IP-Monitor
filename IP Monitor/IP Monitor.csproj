@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>IP_Monitor</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Caminho 2.png" />
+    <None Remove="Indicador.png" />
+    <None Remove="Linha 1.png" />
+    <None Remove="Medidor.png" />
+    <None Remove="Retângulo 1.png" />
+    <None Remove="Retângulo 4.png" />
+    <None Remove="Start.png" />
+    <None Remove="Stop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Caminho 2.png" />
+    <Resource Include="Indicador.png" />
+    <Resource Include="Linha 1.png" />
+    <Resource Include="Medidor.png" />
+    <Resource Include="Retângulo 1.png" />
+    <Resource Include="Retângulo 4.png" />
+    <Resource Include="Start.png" />
+    <Resource Include="Stop.png" />
+  </ItemGroup>
+
+</Project>

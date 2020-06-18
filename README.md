@@ -1,7 +1,7 @@
 # IP-Monitor
 
 A aplicação trata-se de uma interface mais intuitiva para o famoso teste de "Ping".
-Basicamente o programa recebe as informações via json e então começa a "pingar" para o endereço, a diferença é que por meio do arquivo json pode-se controlar os parametros do teste, tamanho de bytes, tempo limite de resposta, o intervalo de um "ping" para outro.
+Basicamente o programa recebe as informações via json e então começa a "pingar" para o endereço, a diferença é que por meio do arquivo json (IPMonitor.json) pode-se controlar os parametros do teste, tamanho de bytes, tempo limite de resposta, o intervalo de um "ping" para outro.
 
 Essa ferramenta é util para saber se o seu provedor tem uma boa latência com o servidor da sua empresa.
 

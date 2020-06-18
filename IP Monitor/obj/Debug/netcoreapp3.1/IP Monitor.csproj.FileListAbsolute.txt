@@ -13,7 +13,6 @@ C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\De
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.g.resources
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.AssemblyInfoInputs.cache
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.AssemblyInfo.cs
-C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.csproj.CoreCompileInputs.cache
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.dll
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.pdb
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.genruntimeconfig.cache
@@ -23,3 +22,8 @@ C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.runtimeconfig.dev.json
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.dll
 C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\IP Monitor.pdb
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\Microsoft.Graph.dll
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\Microsoft.Graph.Core.dll
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\Build\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\Projetos\GitHub\IP Monitor\IP-Monitor\IP Monitor\obj\Debug\netcoreapp3.1\IP Monitor.csproj.CopyComplete

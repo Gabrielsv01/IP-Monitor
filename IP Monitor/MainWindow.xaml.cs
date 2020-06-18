@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows;
@@ -20,51 +23,110 @@ namespace IP_Monitor
         }
 
         static bool EnProcesso = false;
+        static bool IpRequests = false;
+        private DadosIPS dados;
+
+        public class DadosIPS
+        {
+            public string tagServidor1 { get; set; }
+            public string Servidor1 { get; set; }
+            public int bytes1 { get; set; }
+            public int tempoResposta1 { get; set; }
+            public int pingMS1 { get; set; }
+
+
+            public string tagServidor2 { get; set; }
+            public string Servidor2 { get; set; }
+            public int bytes2 { get; set; }
+            public int tempoResposta2 { get; set; }
+            public int pingMS2 { get; set; }
+
+            public string tagServidor3 { get; set; }
+            public string Servidor3 { get; set; }
+            public int bytes3 { get; set; }
+            public int tempoResposta3 { get; set; }
+            public int pingMS3 { get; set; }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!EnProcesso)
+            var requisicaoWeb = WebRequest.CreateHttp("https://drive.google.com/uc?id=13rCaWszlOG-orveRo5pSPDCh2j74sKJU&export=download");
+            
+            requisicaoWeb.Method = "GET";
+            requisicaoWeb.UserAgent = "RequisicaoWebDemo";
+
+
+            try
+            {
+                using (var resposta = requisicaoWeb.GetResponse())
+                {
+                    var streamDados = resposta.GetResponseStream();
+                    StreamReader reader = new StreamReader(streamDados);
+                    object objResponse = reader.ReadToEnd();
+
+                    dados = JsonConvert.DeserializeObject<DadosIPS>(objResponse.ToString());
+                    MessageBox.Show("IPs Atualizados com Sucesso! Pressione OK ");
+
+                    streamDados.Close();
+                    resposta.Close();
+
+                    IpRequests = true;
+
+                }
+
+            }
+            catch { MessageBox.Show("Falha ao atualizar IPs \n Verifique sua conexão com a internet"); }
+
+
+
+
+            if (!EnProcesso && IpRequests)
             {
                 EnProcesso = true;
-                //Thread ping1 = new Thread(new ThreadStart(Ping1));
-                //ping1.Start();
+
                 Servidor servidor1 = new Servidor(
-                    "", 
-                    "168.195.212.50",
-                    32, 
+                    dados.tagServidor1,
+                    dados.Servidor1,
+                    dados.bytes1,
+                    dados.tempoResposta1,
+                    dados.pingMS1,
                     Indicador1,
                     tempo1,
                     nome1,
                     semResposta1,
                     pacotes1,
-                    bytes1, 
+                    bytes1,
                     this.Dispatcher);
                 Thread ping1 = new Thread(new ThreadStart(servidor1.PingTeste));
                 ping1.Start();
 
                 Servidor servidor2 = new Servidor(
-                    "",
-                    "190.15.120.138",
-                    32, 
+                    dados.tagServidor2,
+                    dados.Servidor2,
+                    dados.bytes2,
+                    dados.tempoResposta2,
+                    dados.pingMS2,
                     Indicador2,
                     tempo2,
                     nome2,
                     semResposta2,
                     pacotes2,
-                    bytes2, 
+                    bytes2,
                     this.Dispatcher);
                 Thread ping2 = new Thread(new ThreadStart(servidor2.PingTeste));
                 ping2.Start();
 
                 Servidor servidor3 = new Servidor(
-                    "SIGA - ",
-                    "10.0.4.12", 
-                    32,
+                    dados.tagServidor3,
+                    dados.Servidor3,
+                    dados.bytes3,
+                    dados.tempoResposta3,
+                    dados.pingMS3,
                     Indicador3,
                     tempo3,
-                    nome3, 
-                    semResposta3, 
-                    pacotes3, 
+                    nome3,
+                    semResposta3,
+                    pacotes3,
                     bytes3,
                     this.Dispatcher);
                 Thread ping3 = new Thread(new ThreadStart(servidor3.PingTeste));
@@ -77,13 +139,15 @@ namespace IP_Monitor
         {
 
             private int atraso;
+            private int tempoResposta;
+            private int pingMS;
             System.Windows.Threading.Dispatcher Dispatcher;
             private Rectangle indicador;
-            private System.Windows.Controls.Label tempo;
-            private System.Windows.Controls.Label nome;
-            private System.Windows.Controls.Label semResposta;
-            private System.Windows.Controls.Label pacotes;
-            private System.Windows.Controls.Label bytes;
+            private System.Windows.Controls.Label labelTempo;
+            private System.Windows.Controls.Label labelnome;
+            private System.Windows.Controls.Label labelsemResposta;
+            private System.Windows.Controls.Label labelpacotes;
+            private System.Windows.Controls.Label labelbytes;
             private string link;
             private System.Collections.Generic.List<int> listaTempo;
             private double countTimeout = 0;
@@ -92,30 +156,35 @@ namespace IP_Monitor
             private int packetSize;
             private string tag;
             private int calc;
+            private int limitePerdaVariavel = 0;
 
 
             public Servidor(
                 string tag,
-                string link, 
+                string link,
                 int bytesPacote,
+                int tempoResposta,
+                int pingMS,
                 Rectangle indicador1,
-                System.Windows.Controls.Label tempo,
-                System.Windows.Controls.Label nome,
-                System.Windows.Controls.Label semResposta,
-                System.Windows.Controls.Label pacotes,
-                System.Windows.Controls.Label bytes,
+                System.Windows.Controls.Label labelTempo,
+                System.Windows.Controls.Label labelnome,
+                System.Windows.Controls.Label labelsemResposta,
+                System.Windows.Controls.Label labelpacotes,
+                System.Windows.Controls.Label labelbytes,
                 Dispatcher dispatcher)
-            
+
             {
                 this.tag = tag;
                 this.link = link;
                 this.packetSize = bytesPacote;
+                this.tempoResposta = tempoResposta;
+                this.pingMS = pingMS;
                 this.indicador = indicador1;
-                this.tempo = tempo;
-                this.nome = nome;
-                this.semResposta = semResposta;
-                this.pacotes = pacotes;
-                this.bytes = bytes;      
+                this.labelTempo = labelTempo;
+                this.labelnome = labelnome;
+                this.labelsemResposta = labelsemResposta;
+                this.labelpacotes = labelpacotes;
+                this.labelbytes = labelbytes;
                 this.Dispatcher = dispatcher;
                 this.listaTempo = new System.Collections.Generic.List<int>();
             }
@@ -131,7 +200,7 @@ namespace IP_Monitor
                     try
                     {
                         byte[] packet = new byte[packetSize];
-                        resposta = obj.Send(link, 120, packet);
+                        resposta = obj.Send(link, tempoResposta, packet);
 
                         this.atraso = (int)resposta.RoundtripTime;
                         this.pacotesEnviado += 1;
@@ -148,13 +217,10 @@ namespace IP_Monitor
                         }
                     }
                     catch
-                    {
-
-
-                    }
+                    {}
 
                     MostrarInfor(this.atraso, this.link);
-                    Thread.Sleep(500);
+                    Thread.Sleep(this.pingMS);
 
                 }
             }
@@ -174,22 +240,22 @@ namespace IP_Monitor
                     }
 
 
-                    this.tempo.Content = "Tempo: " + atraso + " ms ";
-                    this.semResposta.Content = "Sem resposta: " + countTotalTimeout;
-                    this.pacotes.Content = "Enviados: " + pacotesEnviado;
-                    this.bytes.Content = "Bytes: " + packetSize;
+                    this.labelTempo.Content = "Tempo: " + atraso + " ms ";
+                    this.labelsemResposta.Content = "Sem resposta: " + countTotalTimeout;
+                    this.labelpacotes.Content = "Enviados: " + pacotesEnviado;
+                    this.labelbytes.Content = "Bytes: " + packetSize;
 
-                    if (tag == "")
+                    if (tag == "" || tag == " " || tag == "null" || tag == " null " || tag == "nulo" || tag == " nulo ")
                     {
-                        nome.Content = "Servidor: " + link;
+                        labelnome.Content = "Servidor: " + link;
                     }
-                    else { nome.Content = tag + link; }
+                    else { labelnome.Content = tag + link; }
 
                     // Criando a rotação
                     RotateTransform myRotateTransform = new RotateTransform();
                     // Criando o grupo de rotação
                     TransformGroup myTransformGroup = new TransformGroup();
-
+                   
 
                     if ((listaTempo.Count == 5) && (((listaTempo.Sum() / listaTempo.Count) > 180) || (listaTempo.Sum() == 0)))
                     {
@@ -201,6 +267,19 @@ namespace IP_Monitor
 
                         // aplicando a rotação
                         indicador.RenderTransform = myTransformGroup;
+
+                        if (this.limitePerdaVariavel == 1)
+                        {
+                            this.limitePerdaVariavel = 0;
+                            EnProcesso = false;
+                            MessageBox.Show("Verifique sua conexão com a internet! \n Falha ao conectar com o servidor! ");
+
+                        }
+                        else
+                        {
+                            this.limitePerdaVariavel += 1;
+                        }
+
                     }
                     else if (listaTempo.Count > 5)
                     {
@@ -223,12 +302,10 @@ namespace IP_Monitor
 
                     }
 
+                   
+
                 }));
             }
-
-
-
-
 
         }
 

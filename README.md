@@ -6,7 +6,7 @@ Basicamente o programa recebe as informações via json e então começa a "ping
 Essa ferramenta é util para saber se o seu provedor tem uma boa latência com o servidor da sua empresa.
 
 Exemplo de como os dados devem estar no arquivo json:
-
+```
 {
 "tagServidor1" : "Google - ",
 "Servidor1" : "www.google.com",
@@ -26,3 +26,4 @@ Exemplo de como os dados devem estar no arquivo json:
 "tempoResposta3": 120,
 "PingMS3" : 500,
 }
+```

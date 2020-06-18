@@ -7,7 +7,7 @@ Essa ferramenta é util para saber se o seu provedor tem uma boa latência com o
 
 ![IPMonitor](https://user-images.githubusercontent.com/32250409/85046334-aa4a5480-b166-11ea-9d31-02576269d61d.png)
 
-Exemplo de como os dados devem estar no arquivo json:
+Exemplo de como os dados devem estar no arquivo "IPMonitor.json" exatamente esse nome:
 ```
 {
 "tagServidor1" : "Google - ",
